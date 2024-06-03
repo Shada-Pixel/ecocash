@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased">
+    <body class="font-sans text-gray-900 dark:text-gray-100 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
             <div>
                 <a href="/">
@@ -26,5 +26,10 @@
                 {{ $slot }}
             </div>
         </div>
+
+
+        {{-- Script --}}
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{{asset("js/custom.js")}}"></script>
     </body>
 </html>
