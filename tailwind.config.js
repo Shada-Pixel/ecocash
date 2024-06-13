@@ -14,6 +14,14 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                seagreen: "#15B6A4",
+                nblue: "#101827",
+            },
+            backgroundImage: {
+                'dashboard': "url('public/dashboard.png')",
+                'dashboardw': "url('../../dashboardw.png')",
+            }
         },
     },
 

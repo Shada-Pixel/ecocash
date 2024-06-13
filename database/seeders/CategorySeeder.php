@@ -16,58 +16,55 @@ class CategorySeeder extends Seeder
         // Data list
         $datas = [
             [
-                'name' => 'Graphic Design',
-                'slug' => 'graphic_design',
+                'name' => 'Hand Cash',
+                'folio' => null,
                 'mode'=> 1,
-                'keywords' => 'photoshop, illustrator, logo, banner',
             ],
             [
-                'name' => 'UI/UX Design',
-                'slug' => 'uiux_development',
+                'name' => 'Towhid Shordar',
+                'folio' => 12,
+                'mode'=> 1,
+            ],
+            [
+                'name' => 'Office expense',
+                'folio' => 13,
                 'mode'=> 2,
-                'keywords' => 'figma, adobexd, prototype, wareframe, experience_design',
             ],
             [
-                'name' => 'Web Design',
-                'slug' => 'web_design',
+                'name' => 'Rejaul shordar',
+                'folio' => 50,
                 'mode'=> 1,
-                'keywords' => 'web_template, saas_design',
             ],
             [
-                'name' => 'Web Developmant',
-                'slug' => 'web_development',
+                'name' => 'Yunus Hujur',
+                'folio' => 52,
                 'mode'=> 1,
-                'keywords' => 'javascript, jquery, laravel, nodejs, django, aws',
             ],
             [
-                'name' => 'Digital Marketing',
-                'slug' => 'digital_marketing',
+                'name' => 'Aktarul Botiaghata',
+                'folio' => 54,
                 'mode'=> 1,
-                'keywords' => 'seo, smm, keyword research, compitator analysis',
             ],
             [
-                'name' => 'SEO',
-                'slug' => 'seo',
+                'name' => 'Ismail Pailing',
+                'folio' => 55,
                 'mode'=> 2,
-                'keywords' => 'seo, smm, keyword research, compitator analysis',
             ],
             [
-                'name' => 'Video Editing',
-                'slug' => 'video_editing',
+                'name' => 'Durlob shordar',
+                'folio' => 56,
                 'mode'=> 1,
-                'keywords' => 'animation, youtube video, facebook video',
             ],
             [
-                'name' => 'Cyber Security',
-                'slug' => 'cyber_security',
+                'name' => 'Shorear cearing',
+                'folio' => 99,
                 'mode'=> 1,
-                'keywords' => 'panitration_testing, account_recovery',
             ]
         ];
 
         // Creating category
         foreach ($datas as $data) {
-            $role = Category::create(['name' => $data['name'], 'slug' => $data['slug'], 'keywords' => $data['keywords'], 'mode' => $data['mode']]);
+            $role = Category::create(['name' => $data['name'], 'folio' => $data['folio'], 'mode' => $data['mode']]);
         }
     }
 }

@@ -11,8 +11,14 @@ class Category extends Model
 
     protected $fillable = [
         'name',
-        'slug',
-        'keywords',
+        'folio',
         'mode'
     ];
+
+
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('slug')->unique()->nullable();
-            $table->longText('keywords')->nullable();
+            $table->string('folio')->unique()->nullable();
             $table->tinyInteger('mode')->default(1)->comment('1 => cash, 2 => expens');
             $table->timestamps();
         });

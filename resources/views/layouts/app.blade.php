@@ -11,13 +11,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('pixadmin/favicon.ico')}}" type="image/x-icon">
 
     <!-- App css -->
     <link href="{{asset('admindash/asset/css/app.min.css')}}" rel="stylesheet" type="text/css">
 
     <!-- Icons css -->
     <link href="{{asset('admindash/asset/css/icons.min.css')}}" rel="stylesheet" type="text/css">
+
+
 
     {{-- Custom css --}}
     <link rel="stylesheet" href="{{asset('admindash/asset/css/custom.css')}}">
@@ -61,7 +63,7 @@
             @include('layouts.adminheader')
             <!-- Topbar End -->
 
-            <main class="p-6 relative">
+            <main class="relative">
                 {{-- for php flash --}}
                 <x-auth-session-status :status="Session::get('message')" id="notificationflush" onclick="hideflash()"></x-auth-session-status>
                 {{-- for ajax flash --}}

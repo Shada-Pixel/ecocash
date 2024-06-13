@@ -18,15 +18,6 @@ class CategoryController extends Controller
     {
         if ($request->ajax()) {
             return Datatables::of( Category::query())->addIndexColumn()
-            // ->addColumn('mode', function(Category $category){
-            //     if ($category->mode) {
-            //         # code...
-            //     } else {
-            //         # code...
-            //     }
-
-            // })
-            // ->rawColumns(['mode'])
             ->make(true);
         }
         return view('categories.index');
@@ -47,8 +38,7 @@ class CategoryController extends Controller
     {
         $category = Category::create([
             'name' => $request->name,
-            'slug' => $request->slug,
-            'keywords' => $request->keywords,
+            'folio' => $request->folio,
             'mode' => $request->mode
         ]);
 
@@ -58,9 +48,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($slug): View
+    public function show(Category $category): View
     {
-        $category = Category::where('slug',$slug)->first();
+        $category = Category::find($category);
+        // return $category;
         return view('categories.show', [
             'category' => $category,
         ]);
@@ -69,10 +60,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($slug)
+    public function edit($id)
     {
 
-        $category = Category::where('slug',$slug)->first();
+        $category = Category::find($id);
         return view('categories.edit', [
             'category' => $category,
         ]);
@@ -81,14 +72,13 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoryRequest $request, $slug)
+    public function update(UpdateCategoryRequest $request, $id)
     {
 
         // return $request;
-        $category = Category::where('slug',$slug)->first();
+        $category = Category::find($id);
         $category->name = $request->name;
-        $category->slug = $request->slug;
-        $category->keywords = $request->keywords;
+        $category->folio = $request->folio;
         $category->mode = $request->mode;
         $category->update();
         return redirect()->route('categories.index')->with(['status' => 200, 'message' => 'Category Updated']);
